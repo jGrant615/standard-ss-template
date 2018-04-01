@@ -13,13 +13,25 @@ module.exports = function(grunt) {
         },
       },
       less: {
-        options: {
-          banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-        },
-        build: {
-          src: 'src/<%= pkg.name %>.css',
-          dest: 'build/<%= pkg.name %>.min.css'
-        },
+        development: {
+          options: {
+            compress: true,
+            yuicompress: true,
+            optimization: 2
+          },
+          files: {
+            "css/main.css": "less/main.less" // destination file and source file
+          }
+        }
+      },
+      watch: {
+        styles: {
+          files: ['src/**/*.less'], // which files to watch
+          tasks: ['less'],
+          options: {
+            nospawn: true
+          }
+        }
       }
     });
   
@@ -29,6 +41,6 @@ module.exports = function(grunt) {
   
     // Default task(s).
     grunt.registerTask('default', ['uglify']);
-    grunt.registerTask('default', ['less']);
+    grunt.registerTask('default', ['less', 'watch']);
   
   };
