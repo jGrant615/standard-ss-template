@@ -3,6 +3,20 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
       pkg: grunt.file.readJSON('package.json'),
+    
+      less: {
+        development: {
+          options: {
+            paths: ["less/"]
+          },
+          files: {
+            "src/assets/css/master.css": "src/assets/css/master.less",
+            "src/app/footer/footer.component.min.css": "src/app/footer/footer.component.less",
+            "src/app/navbar/navbar.component.min.css": "src/app/navbar/navbar.component.less"
+          }
+        }
+      },
+    
       uglify: {
         options: {
           banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
@@ -12,27 +26,7 @@ module.exports = function(grunt) {
           dest: 'build/<%= pkg.name %>.min.js'
         },
       },
-      less: {
-        development: {
-          options: {
-            compress: true,
-            yuicompress: true,
-            optimization: 2
-          },
-          files: {
-            "css/main.css": "less/main.less" // destination file and source file
-          }
-        }
-      },
-      watch: {
-        styles: {
-          files: ['src/**/*.less'], // which files to watch
-          tasks: ['less'],
-          options: {
-            nospawn: true
-          }
-        }
-      }
+      
     });
   
     // Load the plugin that provides the "uglify" task.
