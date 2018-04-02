@@ -12,7 +12,8 @@ module.exports = function(grunt) {
           files: {
             "src/assets/css/master.css": "src/assets/css/master.less",
             "src/app/footer/footer.component.min.css": "src/app/footer/footer.component.less",
-            "src/app/navbar/navbar.component.min.css": "src/app/navbar/navbar.component.less"
+            "src/app/navbar/navbar.component.min.css": "src/app/navbar/navbar.component.less",
+            "src/app/carousel/carousel.component.min.css": "src/app/carousel/carousel.component.less"
           }
         }
       },

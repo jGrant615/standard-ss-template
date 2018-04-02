@@ -33,7 +33,3 @@ import { CarouselComponent } from './carousel/carousel.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-const Moltin = MoltinGateway({
-  client_id: '91EoW1OO88Q4ecPPyaRy6qMffDC3Il0NwN5xuuZ8gP'
-})
