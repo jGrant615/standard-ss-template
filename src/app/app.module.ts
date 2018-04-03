@@ -24,12 +24,12 @@ import { CarouselComponent } from './carousel/carousel.component';
     OrderComponent,
     CheckoutComponent,
     UserComponent,
-    CarouselComponent
+    CarouselComponent,
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
